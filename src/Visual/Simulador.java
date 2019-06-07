@@ -50,7 +50,7 @@ public class Simulador extends javax.swing.JFrame {
         this.setDefaultCloseOperation(Simulador.EXIT_ON_CLOSE);
         jlNombre.setText(nom);
         jLabel4.setHorizontalTextPosition(JLabel.CENTER);
-        this.setMinimumSize(new Dimension(1000, 805));
+        this.setMinimumSize(new Dimension(1500, 805));
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         
