@@ -71,7 +71,7 @@
               <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jTextField2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="50" max="32767" attributes="0"/>
+              <EmptySpace pref="52" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="txtNOMBRE_Admin" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -92,6 +92,13 @@
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JTextField" name="txtNOMBRE_Admin">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="admin"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtNOMBRE_AdminFocusGained"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnIngresar_Admin">
       <Properties>
@@ -182,10 +189,10 @@
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tempus Sans ITC" size="14" style="2"/>
+          <Font name="Times New Roman" size="14" style="3"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="99" green="0" red="0" type="rgb"/>
+          <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="EISI/FIA-UES 2019"/>
         <Property name="enabled" type="boolean" value="false"/>

@@ -72,6 +72,14 @@ public class Administrador extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        txtNOMBRE_Admin.setText("admin");
+        txtNOMBRE_Admin.setToolTipText("");
+        txtNOMBRE_Admin.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtNOMBRE_AdminFocusGained(evt);
+            }
+        });
+
         btnIngresar_Admin.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 3, 14)); // NOI18N
         btnIngresar_Admin.setForeground(new java.awt.Color(0, 0, 255));
         btnIngresar_Admin.setText("Iniciar Sesion");
@@ -142,8 +150,8 @@ public class Administrador extends javax.swing.JFrame {
         });
 
         jTextField5.setEditable(false);
-        jTextField5.setFont(new java.awt.Font("Tempus Sans ITC", 2, 14)); // NOI18N
-        jTextField5.setForeground(new java.awt.Color(0, 0, 153));
+        jTextField5.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jTextField5.setForeground(new java.awt.Color(255, 0, 0));
         jTextField5.setText("EISI/FIA-UES 2019");
         jTextField5.setEnabled(false);
         jTextField5.setFocusable(false);
@@ -193,7 +201,7 @@ public class Administrador extends javax.swing.JFrame {
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNOMBRE_Admin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -279,6 +287,10 @@ public class Administrador extends javax.swing.JFrame {
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void txtNOMBRE_AdminFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNOMBRE_AdminFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNOMBRE_AdminFocusGained
  public void centrarVentana(){
                     setLocationRelativeTo(null);
             }
