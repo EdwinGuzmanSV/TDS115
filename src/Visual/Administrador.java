@@ -5,6 +5,8 @@
 package visual;
 
 import Interfacez.PanelImagen;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -29,6 +31,24 @@ public class Administrador extends javax.swing.JFrame {
         pantallaInicio.setImagen("/imagenes/empresa.jpg");
         pantallaInicio.setSize(680,585);
         this.add(pantallaInicio);
+        txtContraseña.addKeyListener(new KeyListener() {
+        @Override
+        public void keyTyped(KeyEvent e) {
+
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+            if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+               login();
+            }
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+
+        }
+    });
         //this.setIconImage(new ImageIcon(getClass().getResource("/imagenes/xd-04.png")).getImage());
     }
 
@@ -51,12 +71,28 @@ public class Administrador extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel6.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 204));
         jLabel6.setText("Contraseña :");
 
-        btnIngresar_Admin.setText("LOGIN");
+        btnIngresar_Admin.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 3, 14)); // NOI18N
+        btnIngresar_Admin.setForeground(new java.awt.Color(0, 0, 255));
+        btnIngresar_Admin.setText("Iniciar Sesion");
+        btnIngresar_Admin.setSelected(true);
         btnIngresar_Admin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIngresar_AdminActionPerformed(evt);
+            }
+        });
+        btnIngresar_Admin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnIngresar_AdminKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                btnIngresar_AdminKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                btnIngresar_AdminKeyTyped(evt);
             }
         });
 
@@ -66,14 +102,17 @@ public class Administrador extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 204));
         jLabel5.setText("Usuario :");
 
-        jLabel1.setBackground(new java.awt.Color(51, 51, 255));
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 3, 11)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel1.setForeground(new java.awt.Color(51, 0, 255));
         jLabel1.setText("PROCESO DE EMBOTELLAMIENTO DE BEBIDAS CARBONATADAS");
 
         jLabel2.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 3, 11)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 255));
         jLabel2.setText(" EN INDUSTRIAS LA CONSTANCIA");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -84,10 +123,6 @@ public class Administrador extends javax.swing.JFrame {
                 .addGap(55, 55, 55)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnIngresar_Admin)
-                .addGap(168, 168, 168))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -101,9 +136,13 @@ public class Administrador extends javax.swing.JFrame {
                             .addComponent(jLabel6))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNOMBRE_Admin, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
+                            .addComponent(txtNOMBRE_Admin, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
                             .addComponent(txtContraseña))))
                 .addGap(101, 101, 101))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnIngresar_Admin)
+                .addGap(146, 146, 146))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,15 +161,13 @@ public class Administrador extends javax.swing.JFrame {
                     .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addComponent(btnIngresar_Admin)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnIngresar_AdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresar_AdminActionPerformed
-        // TODO add your handling code here:
-        String nomAdmin = txtNOMBRE_Admin.getText();
+ private void login(){
+      String nomAdmin = txtNOMBRE_Admin.getText();
         String contra = txtContraseña.getText();
 
         if(!nomAdmin.isEmpty()){
@@ -155,11 +192,29 @@ public class Administrador extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(this, "Error debe ingresar el usuario");
         }
+ }
+    private void btnIngresar_AdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresar_AdminActionPerformed
+        // TODO add your handling code here:
+       login();
     }//GEN-LAST:event_btnIngresar_AdminActionPerformed
 
     private void txtContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContraseñaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtContraseñaActionPerformed
+
+    private void btnIngresar_AdminKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnIngresar_AdminKeyPressed
+        if (evt.getExtendedKeyCode()==KeyEvent.VK_ENTER){
+            login(); 
+        }
+    }//GEN-LAST:event_btnIngresar_AdminKeyPressed
+
+    private void btnIngresar_AdminKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnIngresar_AdminKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnIngresar_AdminKeyReleased
+
+    private void btnIngresar_AdminKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnIngresar_AdminKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnIngresar_AdminKeyTyped
  public void centrarVentana(){
                     setLocationRelativeTo(null);
             }
@@ -167,28 +222,7 @@ public class Administrador extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Administrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Administrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Administrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Administrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+       
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

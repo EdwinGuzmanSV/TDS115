@@ -10,7 +10,7 @@ import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
 
 /**
- *
+ *b
  *  @author ManuRosales
  */
 public class MM1Model {
