@@ -12,7 +12,10 @@ import java.awt.Desktop;
 import java.awt.image.BufferedImage;
 import java.net.URI;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 import visual.Simulador;
 import visual.Visitante;
 
@@ -38,11 +41,17 @@ public class Simulado extends javax.swing.JFrame {
        initComponents();
         centrarVentana();
         transparenciaBotones();
-      PanelImagen obj = new PanelImagen();
+        PanelImagen obj = new PanelImagen();
         obj.setImagen("fondo.jpg");
         this.add(obj, BorderLayout.CENTER);
         PanelImagen obj1= new PanelImagen();
         obj1.setImagen("humedad.jpg");
+        PanelImagen objeto=new PanelImagen();
+        objeto.setImagen("humedad.jpg");
+        jPanel8.add(objeto);
+        PanelImagen objeto1=new PanelImagen();
+        objeto1.setImagen("humedad.jpg");
+        jPanel5.add(objeto1);
        
         setLocationRelativeTo(null);
        // this.setIconImage(new ImageIcon(getClass().getResource("/imagenes/xd-04.png")).getImage());
@@ -81,7 +90,6 @@ public class Simulado extends javax.swing.JFrame {
         lambdaTxt = new javax.swing.JTextField();
         miuTxt = new javax.swing.JTextField();
         borrar1 = new javax.swing.JButton();
-        simularBtn = new javax.swing.JButton();
         reg = new javax.swing.JButton();
         salir = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
@@ -102,6 +110,7 @@ public class Simulado extends javax.swing.JFrame {
         borrar4 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
+        simularBtn = new javax.swing.JButton();
 
         jMenu1.setText("jMenu1");
 
@@ -143,7 +152,7 @@ public class Simulado extends javax.swing.JFrame {
         jLabel10.setText("Wq:");
 
         rhoTxt.setEditable(false);
-        rhoTxt.setBackground(new java.awt.Color(0, 204, 0));
+        rhoTxt.setBackground(new java.awt.Color(0, 0, 153));
         rhoTxt.setFont(new java.awt.Font("Ubuntu Light", 0, 12)); // NOI18N
         rhoTxt.setForeground(new java.awt.Color(255, 255, 255));
         rhoTxt.setHorizontalAlignment(javax.swing.JTextField.LEFT);
@@ -153,35 +162,35 @@ public class Simulado extends javax.swing.JFrame {
         rhoTxt.setMaximumSize(null);
 
         LTxt.setEditable(false);
-        LTxt.setBackground(new java.awt.Color(0, 204, 0));
+        LTxt.setBackground(new java.awt.Color(0, 0, 153));
         LTxt.setFont(new java.awt.Font("Ubuntu Light", 0, 12)); // NOI18N
         LTxt.setForeground(new java.awt.Color(255, 255, 255));
         LTxt.setDisabledTextColor(new java.awt.Color(0, 0, 51));
         LTxt.setEnabled(false);
 
         wTxt.setEditable(false);
-        wTxt.setBackground(new java.awt.Color(0, 204, 0));
+        wTxt.setBackground(new java.awt.Color(0, 0, 153));
         wTxt.setFont(new java.awt.Font("Ubuntu Light", 0, 12)); // NOI18N
         wTxt.setForeground(new java.awt.Color(255, 255, 255));
         wTxt.setDisabledTextColor(new java.awt.Color(0, 0, 51));
         wTxt.setEnabled(false);
 
         efiTxt.setEditable(false);
-        efiTxt.setBackground(new java.awt.Color(0, 204, 0));
+        efiTxt.setBackground(new java.awt.Color(0, 0, 153));
         efiTxt.setFont(new java.awt.Font("Ubuntu Light", 0, 12)); // NOI18N
         efiTxt.setForeground(new java.awt.Color(255, 255, 255));
         efiTxt.setDisabledTextColor(new java.awt.Color(0, 0, 51));
         efiTxt.setEnabled(false);
 
         LqTxt.setEditable(false);
-        LqTxt.setBackground(new java.awt.Color(0, 204, 0));
+        LqTxt.setBackground(new java.awt.Color(0, 0, 153));
         LqTxt.setFont(new java.awt.Font("Ubuntu Light", 0, 12)); // NOI18N
         LqTxt.setForeground(new java.awt.Color(255, 255, 255));
         LqTxt.setDisabledTextColor(new java.awt.Color(0, 0, 51));
         LqTxt.setEnabled(false);
 
         wqTxt.setEditable(false);
-        wqTxt.setBackground(new java.awt.Color(0, 204, 0));
+        wqTxt.setBackground(new java.awt.Color(0, 0, 153));
         wqTxt.setFont(new java.awt.Font("Ubuntu Light", 0, 12)); // NOI18N
         wqTxt.setForeground(new java.awt.Color(255, 255, 255));
         wqTxt.setDisabledTextColor(new java.awt.Color(0, 0, 51));
@@ -272,13 +281,16 @@ public class Simulado extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel2MouseEntered(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel2MouseExited(evt);
+            }
         });
 
         jLabel3.setFont(new java.awt.Font("Ubuntu Light", 1, 13)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Miu (μ):");
 
-        lambdaTxt.setBackground(new java.awt.Color(0, 204, 0));
+        lambdaTxt.setBackground(new java.awt.Color(51, 0, 255));
         lambdaTxt.setFont(new java.awt.Font("Ubuntu Light", 0, 12)); // NOI18N
         lambdaTxt.setForeground(new java.awt.Color(255, 255, 255));
         lambdaTxt.setCaretColor(new java.awt.Color(255, 255, 255));
@@ -288,7 +300,7 @@ public class Simulado extends javax.swing.JFrame {
             }
         });
 
-        miuTxt.setBackground(new java.awt.Color(0, 204, 0));
+        miuTxt.setBackground(new java.awt.Color(0, 0, 153));
         miuTxt.setFont(new java.awt.Font("Ubuntu Light", 0, 12)); // NOI18N
         miuTxt.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -301,57 +313,37 @@ public class Simulado extends javax.swing.JFrame {
             }
         });
 
-        simularBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        simularBtn.setText("OBTENER RESULTADOS");
-        simularBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        simularBtn.setPreferredSize(new java.awt.Dimension(121, 42));
-        simularBtn.setSelected(true);
-        simularBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                simularBtnActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lambdaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel3)
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(lambdaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(miuTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(0, 36, Short.MAX_VALUE)
-                                .addComponent(borrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(simularBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1)))
-                .addContainerGap())
+                        .addComponent(miuTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(borrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lambdaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(simularBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
+                    .addComponent(jLabel2))
+                .addGap(26, 26, 26)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(miuTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -408,13 +400,13 @@ public class Simulado extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(0, 102, 102));
         jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        wtTxt.setBackground(new java.awt.Color(0, 204, 0));
+        wtTxt.setBackground(new java.awt.Color(0, 0, 153));
         wtTxt.setFont(new java.awt.Font("Ubuntu Light", 0, 12)); // NOI18N
         wtTxt.setForeground(new java.awt.Color(255, 255, 255));
         wtTxt.setDisabledTextColor(new java.awt.Color(0, 0, 51));
         wtTxt.setEnabled(false);
 
-        tTxt.setBackground(new java.awt.Color(0, 204, 0));
+        tTxt.setBackground(new java.awt.Color(0, 0, 153));
         tTxt.setFont(new java.awt.Font("Ubuntu Light", 0, 12)); // NOI18N
         tTxt.setForeground(new java.awt.Color(255, 255, 255));
         tTxt.addActionListener(new java.awt.event.ActionListener() {
@@ -505,12 +497,12 @@ public class Simulado extends javax.swing.JFrame {
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Wq(t):");
 
-        t2Txt.setBackground(new java.awt.Color(0, 204, 0));
+        t2Txt.setBackground(new java.awt.Color(0, 0, 153));
         t2Txt.setFont(new java.awt.Font("Ubuntu Light", 0, 12)); // NOI18N
         t2Txt.setForeground(new java.awt.Color(255, 255, 255));
 
         wqtTxt.setEditable(false);
-        wqtTxt.setBackground(new java.awt.Color(0, 204, 0));
+        wqtTxt.setBackground(new java.awt.Color(0, 0, 153));
         wqtTxt.setFont(new java.awt.Font("Ubuntu Light", 0, 12)); // NOI18N
         wqtTxt.setForeground(new java.awt.Color(255, 255, 255));
         wqtTxt.setDisabledTextColor(new java.awt.Color(0, 0, 51));
@@ -613,6 +605,17 @@ public class Simulado extends javax.swing.JFrame {
             }
         });
 
+        simularBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        simularBtn.setText("OBTENER RESULTADOS");
+        simularBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        simularBtn.setPreferredSize(new java.awt.Dimension(121, 42));
+        simularBtn.setSelected(true);
+        simularBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simularBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -621,11 +624,13 @@ public class Simulado extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(96, 96, 96)
-                        .addComponent(reg))
+                        .addComponent(reg)
+                        .addGap(61, 61, 61)
+                        .addComponent(simularBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(59, 59, 59)
                         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -656,7 +661,9 @@ public class Simulado extends javax.swing.JFrame {
                     .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(reg)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(reg)
+                        .addComponent(simularBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(salir))
                 .addGap(21, 21, 21))
         );
@@ -760,8 +767,12 @@ public class Simulado extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
-        JOptionPane.showMessageDialog(null, "ve un valor llamado lamda");
+
     }//GEN-LAST:event_jLabel2MouseEntered
+
+    private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
+        
+    }//GEN-LAST:event_jLabel2MouseExited
 
     /**
      * @param args the command line arguments
