@@ -127,7 +127,7 @@ Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md
 ⌨️ con ❤️ por [Villanuevand](https://github.com/Villanuevand) 😊
 If you want to embed images, this is how you do it:
 
-![Image of Yaktocat](https://www.javatpoint.com/images/hibernate/hibernate2.png)
+->![Image of Yaktocat](https://www.javatpoint.com/images/hibernate/hibernate2.png)<-
 ```java
 if (isAwesome){
   return true
@@ -148,3 +148,17 @@ First Header | Second Header
 ------------ | -------------
 Content from cell 1 | Content from cell 2
 Content in the first column | Content in the second column
+
+<div style="text-align:center"><img src="https://4.bp.blogspot.com/-yQOg-4_ysLk/V_X3Gv9EUkI/AAAAAAAAEXY/2yEQVx3l4yQwFq__iuS-F2La6CCLFz5YwCLcB/s1600/netbeans.png" /></div>
+
+![A cute kitten](http://placekitten.com/200/300?style=centerme)
+
+img[src$="centerme"] {
+  display:block;
+  margin: 0 auto;
+}
+
+<p align="center">
+  <img src="http://jrain.oscitas.netdna-cdn.com/wp-content/uploads/2018/04/progress-bar-78-214x202.png" width="50%" height="25%px"/></p>
+  
+<img align="center" width="45%" height="20%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png">
