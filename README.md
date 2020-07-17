@@ -3,7 +3,7 @@ Simulacion de Proceso de Produccion de Bebidas Carbonatadas
 
 #Proyecto de investigacion simulacion de procesos en cola.
 
-puto el que lo les
+Proyecto de Tecnicas de simulacion- Universidad de El Salvador
 -----------------
 > Pardon my French
 
